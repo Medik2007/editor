@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}">
     <script src="{% static 'static/src-noconflict/ace.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'static/jquery.js' %}"></script>
     <script type="text/javascript" src="{% static 'main/main.js' %}" defer></script>
 </head>
 
@@ -26,9 +27,10 @@
 
 <div id="menu">
     <h1>WebEditor</h1>
-    <button onclick="run()">Run</button>
+    <button onclick="run(event)">Run</button>
 </div>
 <div id="editor"></div>
+<input type="hidden" id="csrf" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
 </body>
 </html>
