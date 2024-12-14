@@ -3,15 +3,6 @@
 <html lang="en">
 <head>
     <title>WebEditor</title>
-    <style type="text/css" media="screen">
-        #editor { 
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="description" content="Really cool code Web Editor"/>
     <meta property="og:title" content="WebEditor"/>
@@ -30,6 +21,7 @@
     <button onclick="run(event)">Run</button>
 </div>
 <div id="editor"></div>
+<div id="terminal"></div>
 <input type="hidden" id="csrf" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
 </body>

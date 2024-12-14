@@ -27,3 +27,19 @@
         cursor: pointer;
     }
 }
+
+#editor { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 35vh;
+    left: 0;
+}
+
+#terminal {
+    position: absolute;
+    top: 65vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

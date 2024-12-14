@@ -5,9 +5,13 @@ editor.setValue("def foo():\n    print('hello world')\n\nfoo()");
 document.getElementById('editor').style.fontSize='16px';
 document.getElementById('editor').style.marginTop='60px';
 
+var terminal = ace.edit("terminal");
+terminal.setTheme("ace/theme/tomorrow_night");
+terminal.session.setMode("ace/mode/python");
+document.getElementById('terminal').style.fontSize='16px';
 
-function run_success(response) {
-    console.log(response);
+function runSuccess(response) {
+    terminal.insert(response.result);
 }
 
 function run(e) {
@@ -20,7 +24,7 @@ function run(e) {
         type: 'POST',
         url: '',
         data: data,
-        success: run_success,
+        success: runSuccess,
         error: function(error) {
             console.log(data);
             console.log('Error:', error);
