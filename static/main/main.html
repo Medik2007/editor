@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WebEditor</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Really cool code Web Editor"/>
+    <meta property="og:title" content="WebEditor"/>
+    <meta property="og:description" content="Really cool code Web Editor"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}">
+    <script src="{% static 'static/src-noconflict/ace.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'static/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/main.js' %}" defer></script>
+</head>
+
+<body>
+
+<div id="menu">
+    <h1>WebEditor</h1>
+    <div class="choice" id="lang">
+        <h3 onclick="changeLang(0, 'cpp')">C/C++ ▼</h3>
+        <h3 onclick="changeLang(1, 'python')">Python</h3>
+    </div>
+    <div class="choice" id="theme">
+        <h3 onclick="changeTheme(0, 'dark')">Dark ▼</h3>
+        <h3 onclick="changeTheme(1, 'white')">White</h3>
+    </div>
+    <button onclick="run(event)"><h4>Run</h4></button>
+</div>
+<div id="editor"></div>
+<div id="terminal"></div>
+<input type="hidden" id="csrf" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+</body>
+</html>
