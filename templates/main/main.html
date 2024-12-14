@@ -18,7 +18,12 @@
 
 <div id="menu">
     <h1>WebEditor</h1>
-    <button onclick="run(event)">Run</button>
+    <div id="lang">
+        <h3 onclick="changeLang(self, 'py')">Python ▼</h3>
+        <h3 onclick="changeLang(self, 'cpp')">C++</h3>
+        <h3 onclick="changeLang(self, 'c')">C</h3>
+    </div>
+    <button onclick="run(event)"><h4>Run</h4></button>
 </div>
 <div id="editor"></div>
 <div id="terminal"></div>

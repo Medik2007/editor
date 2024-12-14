@@ -1,3 +1,5 @@
+var lang = 'python'
+
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/tomorrow_night");
 editor.session.setMode("ace/mode/python");
@@ -17,7 +19,7 @@ function runSuccess(response) {
 function run(e) {
     e.preventDefault();
     let data = {};
-    data.lang = 'python';
+    data.lang = lang;
     data.code = editor.getValue();
     data.csrfmiddlewaretoken = document.getElementById("csrf").value;
     $.ajax({
@@ -30,4 +32,15 @@ function run(e) {
             console.log('Error:', error);
         }
     });
+}
+
+function changeLang(choice) {
+    lang = choice;
+    if (choice == 'python') {
+        editor.session.setMode('ace/mode/python');
+    }
+    else {
+        editor.session.setMode('ace/mode/c_cpp');
+
+    }
 }
