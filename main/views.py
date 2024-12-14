@@ -27,17 +27,12 @@ def main(request):
                 if compilation.returncode != 0:
                     return JsonResponse({'error':'compilation', 'result':compilation.stderr+'\n'})
 
-                try:
-                    executable = executable
-                    subprocess.run(['cp', executable, 'a'])
-                    output = subprocess.run(['./a'], capture_output=True, text=True)
+                output = subprocess.run([executable], capture_output=True, text=True)
 
-                    if output.returncode != 0:
-                        return JsonResponse({'error':'run', 'result':output.stderr+'\n'})
+                if output.returncode != 0:
+                    return JsonResponse({'error':'run', 'result':output.stderr+'\n'})
 
-                    return JsonResponse({'result':output.stdout+'\n\n'})
-                except Exception as e:
-                    return JsonResponse({'result':str(e)+'\n\n'})
+                return JsonResponse({'result':output.stdout+'\n\n'})
 
             else:
                 command = ['python', file]
