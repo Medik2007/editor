@@ -1,18 +1,34 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <title></title>
+    <title>WebEditor</title>
+    <style type="text/css" media="screen">
+        #editor { 
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
     <meta charset="UTF-8">
-    <meta name="description" content=""/>
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
+    <meta name="description" content="Really cool code Web Editor"/>
+    <meta property="og:title" content="WebEditor"/>
+    <meta property="og:description" content="Really cool code Web Editor"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="{% static '' %}">
-    <!--<script type="text/javascript" src="{% static 'home.js' %}" defer></script>-->
+    <link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}">
+    <script src="{% static 'static/src-noconflict/ace.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'main/main.js' %}" defer></script>
 </head>
 
 <body>
-    <textarea style="width: 100vw; height: 100vh;"></textarea>
+
+<div id="menu">
+    <h1>WebEditor</h1>
+    <button onclick="run()">Run</button>
+</div>
+<div id="editor"></div>
+
 </body>
 </html>

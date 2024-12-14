@@ -123,8 +123,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
-    BASE_DIR / 'templates' / 'main',
-    BASE_DIR / 'templates' / 'static',
+    BASE_DIR / 'templates',
 ]
 
 

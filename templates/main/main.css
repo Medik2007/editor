@@ -1,0 +1,29 @@
+* { margin: 0; padding: 0; font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Source Code Pro', 'source-code-pro', monospace; }
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    width: 100vw;
+    background-color: #25282C;
+    color: #C5C6B9;
+    h1 {
+        margin-left: 10px;
+    }
+    button {
+        margin-left: auto;
+        margin-right: 10px;
+        font-size: 20px;
+        background-color: #25282C;
+        color: #C5C6B9;
+        border: solid 2px #B5BC61;
+        border-radius: 10px;
+        padding: 8px 16px;
+    }
+    button:hover {
+        background-color: #B5BC61;
+        color: #25282C;
+        cursor: pointer;
+    }
+}
