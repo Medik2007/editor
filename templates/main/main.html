@@ -18,10 +18,13 @@
 
 <div id="menu">
     <h1>WebEditor</h1>
-    <div id="lang">
-        <h3 onclick="changeLang(self, 'py')">Python ▼</h3>
-        <h3 onclick="changeLang(self, 'cpp')">C++</h3>
-        <h3 onclick="changeLang(self, 'c')">C</h3>
+    <div class="choice" id="lang">
+        <h3 onclick="changeLang(0, 'cpp')">C/C++ ▼</h3>
+        <h3 onclick="changeLang(1, 'python')">Python</h3>
+    </div>
+    <div class="choice" id="theme">
+        <h3 onclick="changeTheme(0, 'dark')">Dark ▼</h3>
+        <h3 onclick="changeTheme(1, 'white')">White</h3>
     </div>
     <button onclick="run(event)"><h4>Run</h4></button>
 </div>

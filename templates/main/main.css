@@ -18,7 +18,7 @@
         margin-right: 10px;
         font-size: 20px;
         background-color: #25282C;
-        color: #C5C6B9;
+        color: #B5BC61;
         border: solid 2px #B5BC61;
         border-radius: 10px;
         height: fit-content;
@@ -31,8 +31,7 @@
         color: #25282C;
         cursor: pointer;
     }
-    #lang {
-        margin-left: 25px;
+    .choice {
         height: fit-content;
         background-color: #25282C;
         h3 {
@@ -46,7 +45,15 @@
         }
         h3:first-child { display: block; }
     }
-    #lang:hover h3 { display: block; }
+    .choice:hover h3 { display: block; }
+    #lang {
+        margin-left: 25px;
+        width: 110px;
+    }
+    #theme {
+        margin-left: 10px;
+        width: 100px;
+    }
 }
 
 #editor { 
