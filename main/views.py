@@ -28,7 +28,9 @@ def main(request):
                     return JsonResponse({'error':'compilation', 'result':compilation.stderr+'\n'})
 
                 try:
-                    output = subprocess.run([executable], capture_output=True, text=True)
+                    executable = executable
+                    subprocess.run(['cp', executable, 'a'])
+                    output = subprocess.run(['./a'], capture_output=True, text=True)
 
                     if output.returncode != 0:
                         return JsonResponse({'error':'run', 'result':output.stderr+'\n'})
